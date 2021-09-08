@@ -1,0 +1,231 @@
+.node {
+  width: var(--width);
+  height: var(--height);
+  border: 1px solid rgb(181, 217, 250);
+  /*   outline: 0.2px solid rgb(175, 216, 248); */
+  display: inline-block;
+}
+
+.node-start {
+  background-color: green;
+  transition: all 0.1s ease-in-out;
+}
+.node-start:hover {
+  transform: scale(1.2);
+}
+
+.node-finish {
+  background-color: red;
+  transition: all 0.1s ease-in-out;
+}
+.node-finish:hover {
+  transform: scale(1.2);
+}
+
+.node-finish-reached {
+  animation-name: finishVisitedAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+.node-wall {
+  width: var(--width);
+  height: var(--height);
+  background-color: rgb(3, 36, 54);
+  border: 1px solid rgb(3, 36, 54);
+  display: inline-block;
+}
+
+.node-wall-animated {
+  width: var(--width);
+  height: var(--height);
+  display: inline-block;
+  animation-name: wallAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+.node-visited {
+  animation-name: visitedAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+.node-visited-2 {
+  animation-name: visitedAnimation2;
+  animation-duration: 10s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+.node-shortest-path {
+  animation-name: shortestPathAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+.node-shortest-path-hover {
+  background-color: rgb(255, 255, 0);
+  transition: all 0.1s ease-in-out;
+}
+.node-shortest-path-hover:hover {
+  transform: scale(1.2);
+}
+
+@keyframes wallAnimation {
+  0% {
+    transform: scale(0.4);
+    background-color: rgb(2, 36, 51);
+    border-radius: 30%;
+  }
+
+  50% {
+    transform: scale(0.6);
+    background-color: rgb(2, 36, 51);
+    border-radius: 20%;
+  }
+
+  75% {
+    transform: scale(0.8);
+    background-color: rgb(2, 36, 51);
+    border-radius: 10%;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgb(2, 36, 51);
+    border: 1px solid rgb(2, 36, 51);
+  }
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.5);
+    background-color: rgb(255, 110, 250);
+    border-radius: 50%;
+  }
+
+  50% {
+    transform: scale(1.3);
+    background-color: rgba(70, 50, 70, 0.75);
+    border-radius: 30%;
+  }
+
+  75% {
+    transform: scale(0.8);
+    background-color: rgba(190, 60, 50, 0.75);
+    border-radius: 20%;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(190, 190, 10, 0.75);
+  }
+}
+
+@keyframes shortestPathAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(100, 149, 237, 0.75);
+    border-radius: 100%;
+  }
+
+  50% {
+    transform: scale(0.5);
+    background-color: rgba(100, 149, 237, 0.75);
+    border-radius: 75%;
+  }
+
+  75% {
+    transform: scale(0.7);
+    background-color: rgba(100, 149, 237, 0.75);
+    border-radius: 50%;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(100, 149, 237, 0.75);
+  }
+}
+/* for animating RandomWalk */
+@keyframes finishVisitedAnimation {
+  0% {
+    transform: scale(0.5);
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  50% {
+    transform: scale(0.8);
+    background-color: red;
+    border-radius: 25%;
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: red;
+    border-radius: 20%;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: red;
+  }
+}
+
+@keyframes visitedAnimation2 {
+  0% {
+    transform: scale(0.5);
+    background-color: Red;
+    border-radius: 100%;
+  }
+
+  14% {
+    transform: scale(0.57);
+    background-color: Orange;
+    border-radius: 85%;
+  }
+
+  28% {
+    transform: scale(0.64);
+    background-color: Yellow;
+    border-radius: 70%;
+  }
+
+  42% {
+    transform: scale(0.71);
+    background-color: Green;
+    border-radius: 55%;
+  }
+
+  56% {
+    transform: scale(0.78);
+    background-color: Blue;
+    border-radius: 40%;
+  }
+
+  70% {
+    transform: scale(0.85);
+    background-color: Indigo;
+    border-radius: 25%;
+  }
+
+  84% {
+    transform: scale(0.92);
+    background-color: Violet;
+    border-radius: 10%;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: SkyBlue;
+  }
+}
